@@ -1,0 +1,17 @@
+up1 : z 
+up2 : Up 
+down1 : s 
+down2 : Down 
+left1 : q 
+left2 : Left 
+right1 : d 
+right2 : Right 
+bruit : l 
+mus : m 
+spawner1 : space 
+spawner2 : t 
+weapon1 : a 
+weapon2 : e 
+shoot : Return 
+help : h 
+pause : p 
