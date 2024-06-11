@@ -11,7 +11,7 @@ import time
 
 #import sys
 # sys.setrecursionlimit(sys.getrecursionlimit() * 5)
-import function as function
+import function as function # pip install function
 import pygame  # pip install pygame
 import keyboard  # pip install keyboard
 import random
@@ -123,8 +123,8 @@ class ImageGame:  # Camp de gauche
         # Caracteristique du player
         self.dic_player = {
             # x_velo, y_velo, listImagePlayer, deco, Bruitage        # bonus Vitesse de tir, degat, vie a voir
-            'M': [5, 10, i['P-Player']["Homme"], i['Deco_Vie_M'], m.Bruit_Joueur['M']],
-            'F': [5, 10, i['P-Player']["Femme"], i['Deco_Vie_F'], m.Bruit_Joueur['F']]}
+            'M': [6, 12, i['P-Player']["Homme"], i['Deco_Vie_M'], m.Bruit_Joueur['M']],
+            'F': [6, 12, i['P-Player']["Femme"], i['Deco_Vie_F'], m.Bruit_Joueur['F']]}
         # Caracteristique des armes
         self.dic_arme = {
             # [freqTir, imageArme, imageArmeBras, munitions], [velocity, damage, imageBalle, imgExplose],
@@ -136,7 +136,7 @@ class ImageGame:  # Camp de gauche
             'Cult_Silence': [[20, i['Cult_Silence'], i['Bras_Cult_Silence'], 'Infini'], [11, 6, i['Balle1']],
                              m.Bruit_Arme['Cult_Silence'][0], m.Bruit_Arme['Cult_Silence'][1]],
             'Dragon_Destructor': [[40, i['Dragon_Destructor'], i['Bras_Dragon_Destructor'], 10],
-                                  [10, 200, i['Shape_187']],
+                                  [8, 75, i['Shape_187']],
                                   m.Bruit_Arme['Dragon_Destructor'][0], m.Bruit_Arme['Dragon_Destructor'][1]],
             'DA_Moonshadow': [[75, i['DA_Moonshadow'], i['Bras_DA_Moonshadow'], 35], [13, 33, i['Missile_burst']],
                               m.Bruit_Arme['DA_Moonshadow'][0], m.Bruit_Arme['DA_Moonshadow'][1]],
@@ -204,7 +204,7 @@ class ImageGame:  # Camp de gauche
             9: [[2.0, 100, 425, dG['Avion_Aigle'], l['Avion_Aigle'], 0, 350, -50, 200, Mini_Mob_G, 0, -225],
                 [10, 50, i['Shape_187']],
                 m.Bruit_Mob_gentil[9][0], m.Bruit_Mob_gentil[9][1]],
-            10: [[1.0, 20, 375, dG['Corvette'], l['Corvette'], 1, 1, -50, 100, Mini_Mob_G, 0, -225],
+            10: [[1.0, 20, 375, dG['Corvette'], l['Corvette'], 200, 80, -80, 100, Mini_Mob_G, 0, -225],
                  [7, 5, i['Shape_1343']],
                  m.Bruit_Mob_gentil[10][0], m.Bruit_Mob_gentil[10][1]]}
 
@@ -228,9 +228,9 @@ class ImageGame:  # Camp de gauche
                 m.Bruit_Mob_mechant[5][0], m.Bruit_Mob_mechant[5][1]],
             6: [[-1.4, 35, 20, dM['Rebel_Soldier_mortier'], l['Rebel_Soldier_mortier'], 190, 180, 100, 200, Mini_Mob_D, 400, 0], [15, 50, i['Glenos_G_160']],
                 m.Bruit_Mob_mechant[6][0], m.Bruit_Mob_mechant[6][1]],
-            7: [[-2.0, 100, 100, dM['Allen_ONeill'], l['Allen_ONeill'], 0, 350, -50, 150, Mini_Mob_D, 400, 0], [10, 50, i['Shape_1382']],
+            7: [[-2.0, 100, 100, dM['Allen_ONeill'], l['Allen_ONeill'], 200, 350, -100, 150, Mini_Mob_D, 400, 0], [10, 50, i['Shape_1382']],
                 m.Bruit_Mob_mechant[7][0], m.Bruit_Mob_mechant[7][1]],
-            8: [[-1.0, 20, 150, dM['Bazooka_Soldier'], l['Bazooka_Soldier'], 1, 1, -50, 200, Mini_Mob_D, 650, 0], [7, 5, i['Craft_Missile']],
+            8: [[-1.0, 20, 150, dM['Bazooka_Soldier'], l['Bazooka_Soldier'], 150, 150, -100, 200, Mini_Mob_D, 650, 0], [7, 5, i['Craft_Missile']],
                 m.Bruit_Mob_mechant[8][0], m.Bruit_Mob_mechant[8][1]],
             9: [[-1.6, 80, 80, dM['Allen_Mecha'], l['Allen_Mecha'], 155, 180, 100, 200, Mini_Mob_D, 300, 0], [14, 30, i['Shape_1343']],
                 m.Bruit_Mob_mechant[9][0], m.Bruit_Mob_mechant[9][1]],
@@ -248,9 +248,9 @@ class ImageGame:  # Camp de gauche
                 m.Bruit_Mob_mechant[5][0], m.Bruit_Mob_mechant[5][1]],
             16: [[-1.4, 35, 20, dM['M_15A_Bradley'], l['M_15A_Bradley'], 190, 180, 100, 200, Mini_Mob_D, 400, 0], [15, 50, i['Glenos_G_160']],
                 m.Bruit_Mob_mechant[6][0], m.Bruit_Mob_mechant[6][1]],
-            17: [[-2.0, 100, 100, dM['Shoe_Brown'], l['Shoe_Brown'], 0, 350, -50, 150, Mini_Mob_D, 400, 0], [10, 50, i['Shape_1382']],
+            17: [[-2.0, 100, 100, dM['Shoe_Brown'], l['Shoe_Brown'], 175, 350, -100, 150, Mini_Mob_D, 400, 0], [10, 50, i['Shape_1382']],
                 m.Bruit_Mob_mechant[7][0], m.Bruit_Mob_mechant[7][1]],
-            18: [[-1.0, 20, 150, dM['Flying_Tara'], l['Flying_Tara'], 1, 1, -50, 200, Mini_Mob_D, 650, -225], [7, 5, i['Craft_Missile']],
+            18: [[-1.0, 20, 150, dM['Flying_Tara'], l['Flying_Tara'], 250, 125, -100, 200, Mini_Mob_D, 650, -225], [7, 5, i['Craft_Missile']],
                 m.Bruit_Mob_mechant[8][0], m.Bruit_Mob_mechant[8][1]],
             19: [[-1.6, 80, 80, dM['Ptolemaic_Tara'], l['Ptolemaic_Tara'], 155, 180, 100, 200, Mini_Mob_D, 300, -225], [14, 30, i['Shape_1343']],
                 m.Bruit_Mob_mechant[9][0], m.Bruit_Mob_mechant[9][1]],
@@ -266,11 +266,11 @@ class ImageGame:  # Camp de gauche
             # [velocity, frectir, health, imageMobe, imgGris, x_min, x_max, y_min, y_max, ImageMini, nbPoint, pos_y],
             # [velocityBballe, damage, imageBalle, , imgExplose], [BruitArme], [BruitBalle]
             1: [[-2, 80, 700, dM['Scientist'], l['Scientist'], 155, 400, 100, 100, Mini_Boss, 1250, 0],
-                [17, 37, i['Craft_Missile']], m.Bruit_Boss[1][0], m.Bruit_Boss[1][1]],
+                [17, 40, i['Craft_Missile']], m.Bruit_Boss[1][0], m.Bruit_Boss[1][1]],
             2: [[-1.5, 100, 600, dM['Mars_People'], l['Mars_People'], 330, 180, 50, 75, Mini_Boss, 1250, 0],
-                [16, 50, i['Shape_1382']], m.Bruit_Boss[2][0], m.Bruit_Boss[2][1]],
+                [16, 55, i['Shape_1382']], m.Bruit_Boss[2][0], m.Bruit_Boss[2][1]],
             3: [[-2.5, 35, 500, dM['Slug_Square'], l['Slug_Square'], 190, 280, 100, 0, Mini_Boss, 1250, 0],
-                [15, 25, i['Glenos_G_160']], m.Bruit_Boss[3][0], m.Bruit_Boss[3][1]]}
+                [15, 60, i['Glenos_G_160']], m.Bruit_Boss[3][0], m.Bruit_Boss[3][1]]}
 
 
 
@@ -464,8 +464,8 @@ class MusiqueGame:
 
         # Chargement des musiques
         nomMus = [['Battle_for_honor', 0.1, 143], ['Black_Hole', 0.1, 196], ['Centaury', 0.1, 202],
-                  ['Game', 0.1, 64], ['Indian_Express', 0.1, 64], ['Little_Sarah', 0.1, 130],
-                  ['Requiem', 0.1, 68], ['Retro_Gaming_Level', 0.1, 149], ['The_16-bit_Big_Boss', 0.1, 92],
+                  ['Game', 0.1, 64], ['Indian_Express', 0.1, 64],
+                  ['Requiem', 0.1, 68], ['Retro_Gaming_Level', 0.1, 149],
                   ["Commando_Original-Mission-1_1", 0.1, 39],
                   ["Commando_Original-Mission-1_2", 0.1, 41],
                   ["Commando_Original-Mission-1_3", 0.1, 44],
@@ -1265,7 +1265,7 @@ class Camp:
     #  self.player = Player(ImageGame, MusiqueGame, game, camp, canvas, pseudo, health, pos_x, pos_y, Cararc_Joueur)
     def invoqueJoueur(self):
         self.player = Player(self.dataImg, self.dataMus, self.game, self, self.canvas, "Admin", self.game.nbPv,
-                             self.pos_x, self.pos_y, self.Cararc_Joueur)
+                             self.pos_x, self.pos_y+30, self.Cararc_Joueur)
         # Deplace  la minimap, le cardre, le sexe du joueur, les scores et le nb vie du player
         co = self.canvas.coords(self.game.FrameMiniMap)
         x, y = -abs(co[0] - 920), -abs(co[1] - 15)
@@ -2754,7 +2754,7 @@ class Item(pygame.sprite.Sprite):
         self.statue = 'normal'
         self.hauteur = 'nonAtteind'
         self.velo_y = 4
-        self.Dedtime = round(time.time() + 12)
+        self.Dedtime = round(time.time() + 20)
 
         if self.pos_y < 660:
             self.sol = self.camp.pos_y
